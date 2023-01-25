@@ -1,13 +1,63 @@
-body {
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container{
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, #f66d9f 0 40%, #f47261 80%);
+  display: grid;
+  place-items: center;
+
+}
+.innerContainer{
+  width: 25rem;
+padding: 2rem;
+background-color: #212854;
+color: #fff;
+font-size: 1.2rem;
+box-shadow: 0 0 0.6rem rgb(2, 66, 68);
+}
+.innerContainer h2{
+text-align: center;
+margin-bottom: 1rem;
+}
+
+.form div{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+ 
+}
+
+.form div input{
+  border: none;
+  background: #4f5c88;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  outline: none;
+  font-size: 1rem;
+}
+.form div input::placeholder{
+  color: rgb(194, 190, 190);
+}
+
+.btn{
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  background: green;
+  color: #fff;
+  width: 100%;
+  border-radius: 1rem;
+}
+.btn:hover{
+    background: rgb(5, 107, 5);
+  color: #fff;
 }
