@@ -4,12 +4,14 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  font-family: monospace;
+  font-size: 0.5;
 }
 
 .container{
   width: 100%;
   height: 100vh;
-  background: linear-gradient(to right, #f66d9f 0 40%, #f47261 80%);
+  background: linear-gradient(to right, #b68061 0 40%, #a95247 80%);
   display: grid;
   place-items: center;
 
@@ -17,14 +19,15 @@
 .innerContainer{
   width: 25rem;
 padding: 2rem;
-background-color: #212854;
+background-color: #6786ebb1;
 color: #fff;
 font-size: 1.2rem;
-box-shadow: 0 0 0.6rem rgb(2, 66, 68);
+border-radius: 20px;
 }
 .innerContainer h2{
 text-align: center;
 margin-bottom: 1rem;
+font-size: 2rem;
 }
 
 .form div{
@@ -36,15 +39,16 @@ margin-bottom: 1rem;
 
 .form div input{
   border: none;
-  background: #4f5c88;
+  background: #8591b8;
   color: #fff;
   padding: 0.5rem 1rem;
   margin: 0.5rem 0;
   outline: none;
   font-size: 1rem;
+  border-radius: 8px;
 }
 .form div input::placeholder{
-  color: rgb(194, 190, 190);
+  color: rgb(26, 23, 23);
 }
 
 .btn{
@@ -54,8 +58,8 @@ margin-bottom: 1rem;
   cursor: pointer;
   background: green;
   color: #fff;
-  width: 100%;
-  border-radius: 1rem;
+  width: 40%;
+  border-radius: 0.5rem;
 }
 .btn:hover{
     background: rgb(5, 107, 5);
