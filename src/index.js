@@ -1,7 +1,7 @@
 
 import ReactDOM from 'react-dom/client';
 import Phonebook from './components/Phonebook';
-// import Phonebook from './components/States';
+// import States from './components/States';
 import './index.css';
 // import Form from "./form"
 

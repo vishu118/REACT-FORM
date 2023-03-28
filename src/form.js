@@ -85,12 +85,12 @@ function Form() {
         </form>
       </div> 
 
-     {
+     {/* {
       
       userInfo.map((ele)=>{
 
       })
-     }
+     } */}
 
     </div>
 
