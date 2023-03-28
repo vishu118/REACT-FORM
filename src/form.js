@@ -20,6 +20,7 @@ function Form() {
     // console.log(records)
     setRecords([...records, newUserInfo]);
     setUserInfo({ name: "", email: "", phone: "", password: "" });
+    console.log(userInfo)
   };
   return (
     <div className="container">
@@ -82,8 +83,18 @@ function Form() {
             submit
           </button>
         </form>
-      </div>
+      </div> 
+
+     {
+      
+      userInfo.map((ele)=>{
+
+      })
+     }
+
     </div>
+
+
   );
 }
 
