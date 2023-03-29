@@ -7,26 +7,39 @@ const Data = () => {
   const [Contact, setContact] = useState(Mock);
   const [AddFormData, setAddFormData] = useState({
     fullName: "",
-    address :"",
+    address: "",
     phoneNumber: "",
-    email : ""
-
-
-
+    email: "",
   });
 
-  const handleAddContact = (e)=>{
+  const handleAddContact = (e) => {
     e.preventDefault();
 
-    const fieldName = e.target.getAttribute('name')
-    const fieldValue = e.target.value
+    const fieldName = e.target.getAttribute("name");
 
-    const newFormData = {...AddFormData}
+    const fieldValue = e.target.value;
+   
+
+    const newFormData = { ...AddFormData };
     newFormData[fieldName] = fieldValue;
 
+    setAddFormData(newFormData);
+  };
 
-    setAddFormData(newFormData)
-  }
+  const handleAddDataContact = (e) => {
+    e.preventDefault();
+    
+    const newContact = {
+        fullName : AddFormData.fullName,
+        address : AddFormData.address,
+        phoneNumber : AddFormData.phoneNumber,
+        email : AddFormData.email
+    }
+
+
+    const newContacts = [...Contact,newContact]
+    setContact(newContacts)
+  };
 
   return (
     <div className="app-container">
@@ -37,7 +50,6 @@ const Data = () => {
             <th>Address</th>
             <th>Phone Number</th>
             <th>Email</th>
-        
           </tr>
         </thead>
         <tbody>
@@ -56,7 +68,7 @@ const Data = () => {
 
       <h2>Add a Contacts. </h2>
 
-      <form action="">
+      <form action="" onSubmit={handleAddDataContact}>
         <input
           type="text"
           name="fullName"
@@ -85,7 +97,9 @@ const Data = () => {
           placeholder="Enter Your ID..."
           onChange={handleAddContact}
         />
-        <button type="submit">Add</button>
+        <button type="submit">
+          Add
+        </button>
       </form>
     </div>
   );
