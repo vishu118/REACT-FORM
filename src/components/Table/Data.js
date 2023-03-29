@@ -4,7 +4,7 @@ import "./Table.css";
 import Mock from "./Dummy.json";
 
 const Data = () => {
-  const [Contact, setContact] = useState(Mock);
+  // const [Contact, setContact] = useState(Mock);
   const [AddFormData, setAddFormData] = useState({
     fullName: "",
     address: "",
@@ -22,6 +22,7 @@ const Data = () => {
 
     const newFormData = { ...AddFormData };
     newFormData[fieldName] = fieldValue;
+    console.log(newFormData)
 
     setAddFormData(newFormData);
   };

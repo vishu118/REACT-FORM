@@ -1,44 +1,86 @@
 import { useState } from "react";
+// import './Table/Table.css'
+// import '../index.css'
 
 export default function Phonebook() {
-  const [email, Setemail] = useState("");
-  const [name, Setname] = useState("");
-  const [number, Setnumber] = useState("");
+  const [tableData, setTableData] = useState([]);
+  const [FormInputData, SetFormInputData] = useState({
+    Name: "",
+    Email: "",
+    Phone: "",
+  });
+
+  function handleChange(e) {
+    e.preventDefault();
+
+    const newInput = (data) => ({
+      ...data,
+      [e.target.name]: e.target.value,
+     
+    });
+    console.log(data)
+    SetFormInputData(newInput);
+  }
 
   const handleSubmit = (e) => {
-    Setemail(e.target.value)
-    Setnumber(e.target.value)
-    Setname(e.target.value)
+    e.preventDefault();
+    const newData = (data) => [...data, FormInputData];
+    setTableData(newData);
   };
 
-  function handleEmail(e){
-    let len = e.target.value;
-    len?Setemail(true):Setemail(false)
-  }
-  function handleName(e){
-    let len = e.target.value;
-    len?Setname(true):Setname(false)
-  }
-  function handleNumber(e){
-    let len = e.target.value;
-    len?Setnumber(true):Setnumber(false)
-  }
   return (
-
     <>
-      <form className="container">
-        <label htmlFor="name">Name</label>
-        <input type="text" id="name" onChange={handleName}/>
-        <br />
-        
-        <label htmlFor="email">Email</label>
-        <input type="text" id="email" onChange={handleEmail} />
-        <br />
-        <label htmlFor="number">Number</label>
-        <input type="text" id="number" onChange={handleNumber}/>
-        <br />
-        <button onClick={handleSubmit}>Click Me</button>
-      </form>
+      <div className="container">
+        <form className="innerContainer">
+          <label name="Name">Name</label>
+          <input
+            type="text"
+            name="Name"
+            onChange={handleChange}
+            value={FormInputData.Name}
+          />
+          <br />
+
+          <label name="Email">Email</label>
+          <input
+            type="text"
+            name="Email"
+            onChange={handleChange}
+            value={FormInputData.Email}
+          />
+          <br />
+          <label name="Phone">Number</label>
+          <input
+            type="text"
+            name="Phone"
+            onChange={handleChange}
+            value={FormInputData.Phone}
+          />
+          <br />
+          <button onClick={handleSubmit}>Click Me</button>
+        </form>
+
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tableData.map((data, index) => {
+              return (
+                <tr key={index}>
+                  <td>{data.Name}</td>
+                  <td>{data.Email}</td>
+                  <td>{data.Phone}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 }
